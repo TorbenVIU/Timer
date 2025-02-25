@@ -1,10 +1,17 @@
 .inputs__container {
+  --font-size: clamp(60px, calc(3.75rem + ((1vw - 3.75px) * 16.9697)), 200px);
+
   width: 100dvw;
   height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--midnight-blue);
+}
+
+.inputs__container-inner {
+  margin: 1rem;
 }
 
 .inputs__quick-options {
@@ -13,11 +20,15 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.button_quick-option {
+  flex-grow: 1;
 }
 
 .inputs {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -29,88 +40,46 @@
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  background: #f5f5f5;
+  background-color: transparent;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
-  
-  input[type=number] {
+
+  input[type='number'] {
     -moz-appearance: textfield;
     appearance: textfield;
   }
 }
 
-.inputs__fields input {
-  font-size: 12rem;
-  width: 14rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 4px;
+.inputs__field {
+  color: white;
+  font-size: var(--font-size);
+  width: calc(var(--font-size) * 1.5);
   text-align: center;
-  background: white;
+  background: var(--midnight-blue);
   transition: border-color 0.2s ease;
+  border: 0;
 }
 
-.inputs__fields input:focus {
+.inputs__field:focus {
   outline: none;
-  border-color: #2196f3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
 }
 
-.inputs__fields input:hover {
-  border-color: #bdbdbd;
-}
-
-.inputs__fields input {
+.inputs__field {
   margin: 0 10px;
 }
 
-.inputs__fields button {
-  margin-top: 10px;
+.inputs__field-separator {
+  color: white;
+  font-size: var(--font-size);
+  line-height: 1;
+  transform: translateY(-0.1em);
 }
 
-.inputs__button {
+.button_start {
   margin-top: 2.5em;
-}
-
-.button {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button:after {
-  content: "";
-  background-color: #ffe54c;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
-}
-
-.button:hover:after {
-  top: 0px;
-  left: 0px;
-}
-
-@media (min-width: 768px) {
-  .button {
-    padding: 13px 50px 13px;
-  }
 }

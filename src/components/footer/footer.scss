@@ -28,21 +28,21 @@
 .madeby__link:hover .viulogo__v,
 .madeby__link:active .viulogo__v,
 .madeby__link:focus .viulogo__v {
-  animation: 0.2s ease-out forwards fill, 0.2s ease-in-out forwards jump;
+  animation: 0.2s ease-out forwards fill, 0.2s ease-in-out forwards footerJump;
 }
 
 .madeby__link:hover .viulogo__i,
 .madeby__link:active .viulogo__i,
 .madeby__link:focus .viulogo__i {
   animation: 0.2s ease-out 0.1s forwards fill,
-    0.2s ease-in-out 0.1s forwards jump;
+    0.2s ease-in-out 0.1s forwards footerJump;
 }
 
 .madeby__link:hover .viulogo__u,
 .madeby__link:active .viulogo__u,
 .madeby__link:focus .viulogo__u {
   animation: 0.2s ease-out 0.2s forwards fill,
-    0.2s ease-in-out 0.2s forwards jump;
+    0.2s ease-in-out 0.2s forwards footerJump;
 }
 
 @keyframes fill {
@@ -54,7 +54,7 @@
   }
 }
 
-@keyframes jump {
+@keyframes footerJump {
   0%,
   100% {
     transform: translateY(0);

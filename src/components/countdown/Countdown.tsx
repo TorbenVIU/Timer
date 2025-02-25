@@ -78,8 +78,8 @@ const Countdown = ({ milliseconds, setMilliseconds }: Props) => {
       </div>
       <h1 className='countdown__time'>{timeString}</h1>
       <div className='countdown__buttons'>
-        <button className='countdown__button' onClick={onRestart}>Neu starten</button>
-        <button className='countdown__button' onClick={() => setMilliseconds(0)}>Abbrechen</button>
+        <button className='button' onClick={onRestart}>Neu starten</button>
+        <button className='button' onClick={() => setMilliseconds(0)}>Abbrechen</button>
       </div>
     </div>
   );

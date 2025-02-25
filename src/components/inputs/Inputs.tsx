@@ -12,8 +12,7 @@ const TIME_OPTIONS = [
   { label: '30 Minuten', value: 1800000 },
   { label: '45 Minuten', value: 2700000 },
   { label: '60 Minuten', value: 3600000 },
-  
-]
+];
 
 const Inputs = ({ milliseconds, setMilliseconds }: Props) => {
   const minutesRef = React.useRef<HTMLInputElement>(null);
@@ -32,47 +31,54 @@ const Inputs = ({ milliseconds, setMilliseconds }: Props) => {
 
   return (
     <div className='inputs__container'>
-    <div className='inputs__quick-options'>
-      {TIME_OPTIONS.map((option) => (
-        <button
-          key={option.value}
-          type='button'
-          className='button inputs__quick-option'
-          onClick={() => setMilliseconds(option.value)}
+      <div className='inputs__container-inner'>
+        <form
+          className='inputs'
+          onSubmit={e => {
+            e.preventDefault();
+            handleSubmit();
+          }}
         >
-          {option.label}
-        </button>
-      ))}
-    </div>
-
-    <form className='inputs' onSubmit={(e) => {
-      e.preventDefault();
-      handleSubmit();
-    }}>
-      <div className='inputs__fields'>
-        <input
-          type='number'
-          min={0}
-          ref={minutesRef}
-          placeholder='00'
-          aria-label='Minutes'
-          className='inputs__field'
-        />
-        :
-        <input
-          type='number'
-          min={0}
-          max={59}
-          ref={secondsRef}
-          placeholder='00'
-          aria-label='Seconds'
-          className='inputs__field'
-        />
+          <div className='inputs__fields'>
+            <input
+              type='number'
+              min={0}
+              ref={minutesRef}
+              placeholder='00'
+              aria-label='Minutes'
+              className='inputs__field'
+            />
+            <span className='inputs__field-separator'>:</span>
+            <input
+              type='number'
+              min={0}
+              max={59}
+              ref={secondsRef}
+              placeholder='00'
+              aria-label='Seconds'
+              className='inputs__field'
+            />
+          </div>
+          <button
+            type='submit'
+            className='button button_start'
+          >
+            Start Timer
+          </button>
+          <div className='inputs__quick-options'>
+            {TIME_OPTIONS.map(option => (
+              <button
+                key={option.value}
+                type='button'
+                className='button button_quick-option'
+                onClick={() => setMilliseconds(option.value)}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </form>
       </div>
-      <button type='submit' className='button inputs__button'>
-        Start Timer
-      </button>
-    </form>
     </div>
   );
 };

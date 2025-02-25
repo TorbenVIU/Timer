@@ -1,6 +1,7 @@
 @use '../src/components/timer/timer.scss';
 @use '../src/components/countdown/countdown.scss';
 @use '../src/components/inputs/inputs.scss';
+@use '../src/components/footer/footer.scss';
 
 body {
   margin: 0;
@@ -10,11 +11,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --viu-red: #FF2300;
-  --surface-gray: #E5E7EB;
+  --viu-red: #ff2300;
+  --midnight-blue: #001327;
+  --surface-gray: #e5e7eb;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
