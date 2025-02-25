@@ -1,0 +1,118 @@
+.countdown {
+  font-family: 'Courier New', Courier, monospace;
+  width: 100dvw;
+  height: 100dvh;
+  font-size: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.countdown {
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-duration: var(--seconds);
+  animation-name: countdown-progress;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+
+.countdown__background-color {
+  position: relative;
+  background-color: var(--viu-red);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.countdown__warn-element {
+  position: absolute;
+  top: 0;
+  left: 3%;
+  height: 330px;
+  transition: transform 1s ease-in-out;
+  z-index: 1;
+
+  .countdown--warning-1 & {
+    transform: translateY(-80%);
+  }
+
+  .countdown--warning-2 & {
+    animation: jump 1.5s ease-in-out infinite;
+  }
+}
+
+.countdown__time {
+  z-index: 2;
+  color: rgb(0, 220, 255);
+  mix-blend-mode: difference;
+  position: relative;
+
+  .countdown--overtime & {
+    &::before {
+      content: '-';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@keyframes countdown-progress {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(-80%);
+  }
+  50% {
+    transform: translateY(-90%);
+  }
+}
+
+.countdown__buttons {
+  position: fixed;
+  display: flex;
+  gap: 0.8rem;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2;
+
+  .countdown__button {
+    background: transparent;
+    border: 2px solid rgb(0, 220, 255);
+    color: rgb(0, 220, 255);
+    mix-blend-mode: difference;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 220, 255, 0.1);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+  }
+}

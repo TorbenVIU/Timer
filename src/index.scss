@@ -1,0 +1,20 @@
+@use '../src/components/timer/timer.scss';
+@use '../src/components/countdown/countdown.scss';
+@use '../src/components/inputs/inputs.scss';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --viu-red: #FF2300;
+  --surface-gray: #E5E7EB;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
