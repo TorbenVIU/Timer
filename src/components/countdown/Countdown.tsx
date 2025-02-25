@@ -6,8 +6,8 @@ interface Props {
   setMilliseconds: (milliseconds: number) => void;
 }
 
-const ONE_MINUTE = 60000;
-const TEN_SECONDS = 10000;
+const FIRST_WARNING_TIME = 60000;
+const SECOND_WARNING_TIME = 10000;
 
 const Countdown = ({ milliseconds, setMilliseconds }: Props) => {
   const [time, setTime] = useState(milliseconds);
@@ -27,11 +27,11 @@ const Countdown = ({ milliseconds, setMilliseconds }: Props) => {
         const newTime = time - 1000;
         setTime(newTime);
 
-        if (newTime <= ONE_MINUTE && !hasFirstWarning) {
+        if (newTime <= FIRST_WARNING_TIME && !hasFirstWarning) {
           setHasFirstWarning(true);
         }
 
-        if (newTime <= TEN_SECONDS && !hasSecondWarning) {
+        if (newTime <= SECOND_WARNING_TIME && !hasSecondWarning) {
           setHasSecondWarning(true);
         }
 

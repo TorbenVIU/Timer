@@ -1,11 +1,14 @@
 .countdown {
-  font-family: monospace;
   width: 100dvw;
   height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   background-color: var(--viu-red);
+
+  .button {
+    white-space: nowrap;
+  }
 }
 
 .countdown {
@@ -53,6 +56,7 @@
 }
 
 .countdown__time {
+  font-family: monospace;
   font-size: clamp(110px, calc(6.875rem + ((1vw - 3.75px) * 25.4545)), 320px);
   z-index: 2;
   color: white;
@@ -86,6 +90,12 @@
   bottom: 1.5rem;
   right: 2rem;
   z-index: 5;
+
+  @media screen and (max-width: 750px) {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 5rem;
+  }
 }
 
 @keyframes countdown-progress {

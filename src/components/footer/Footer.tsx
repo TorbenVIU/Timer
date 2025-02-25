@@ -5,7 +5,12 @@ const Footer = () => {
     <footer className='footer'>
       <span className='madeby'>
         Made by{' '}
-        <a className='madeby__link' href='https://www.viu.ch'>
+        <a
+          className='madeby__link'
+          href='https://www.viu.ch'
+          target='_blank'
+          rel='noreferrer'
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='viulogo'

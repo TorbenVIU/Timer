@@ -22,12 +22,12 @@ code {
 }
 
 .button {
+  font-family: unset;
   background: transparent;
   border: 1px solid white;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
-  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
 
