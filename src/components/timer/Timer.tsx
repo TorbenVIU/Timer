@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import Inputs from '../inputs/Inputs';
 import Countdown from '../countdown/Countdown';
 
+const minutesToMs = 1000 * 60
+
 const Timer = () => {
-  const [milliseconds, setMilliseconds] = useState(0);
+  const [milliseconds, setMilliseconds] = useState(minutesToMs * 15);
 
   return (
     <>
