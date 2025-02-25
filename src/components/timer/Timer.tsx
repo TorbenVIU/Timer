@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Inputs from '../inputs/Inputs';
 import Countdown from '../countdown/Countdown';
+import Footer from '../footer/Footer';
 
 const minutesToMs = 1000 * 60
 
@@ -11,6 +12,7 @@ const Timer = () => {
     <>
       <Inputs milliseconds={milliseconds} setMilliseconds={setMilliseconds} />
       {milliseconds && <Countdown milliseconds={milliseconds} setMilliseconds={setMilliseconds} />}
+      <Footer />
     </>
   );
 };
