@@ -60,6 +60,7 @@ const Countdown = ({ milliseconds, setMilliseconds }: Props) => {
   };
 
   const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  const source = hasSecondWarning ? "./assets/mad_torben.png" : "./assets/happy_torben.png";
 
   return (
     <div
@@ -72,7 +73,7 @@ const Countdown = ({ milliseconds, setMilliseconds }: Props) => {
       key={animationKey}
     >
       <div className='countdown__background'>
-        <img className='countdown__warn-element' src="./assets/torben.png" alt="" />
+        <img className='countdown__warn-element' src={source} alt="" />
         <div className='countdown__background-color'></div>
       </div>
       <h1 className='countdown__time'>{timeString}</h1>
